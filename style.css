@@ -12,13 +12,11 @@ Text Domain: hmbase
 
 /* Search BEGIN */
 
-.search div{
-	display:inline-block;
+.search-submit{
+	display:inline;
+	width:2em;
+	height:2em;
+	text-align:center;
 }
-
-.search label{
-	display: none;
-}
-
 
 /* Search END */
