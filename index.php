@@ -11,7 +11,8 @@
 				<?php
 					// The Loop Ends
 						} // end while
-					} // end if 
+					} // end if
+				?>
 			</div>
 		</main>
 	</section>
