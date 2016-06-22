@@ -19,12 +19,12 @@
 		</header>
 		<nav>
 			<div class="row">
-				<div id="menu" class="col-xs-8">
+				<div id="menu" class="col-xs-7">
 					<ul>
 						<li><a href="#">test</a></li>
 					</ul>
 				</div>
-				<div class="col-xs-4 search">
+				<div class="col-xs-5 search">
 					<?php echo get_search_form(); ?>
 				</div>
 			</div>

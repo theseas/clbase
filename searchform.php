@@ -8,7 +8,6 @@
     <div class="form-group">
         <input type="text" class="form-control" value="<?php echo get_search_query(); ?>" name="s" id="s" />
 		<button type="submit" class="btn btn-primary">
-			<span class="glyphicon glyphicon-search" aria-hidden="true">&nbsp;</span>
 			<?php echo esc_attr_x('Search', 'submit button'); ?>
 		</button>
     </div>
