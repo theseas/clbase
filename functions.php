@@ -68,7 +68,7 @@ function hmbase_get_script($name, $path = ''){
 
 
 function hmbase_menus(){
-	register_nav_menu('hmbase-top', __('Top Menu', 'hmbase'));
+	register_nav_menus('hmbase-top' => __('Top menu', 'hmbase'));
 }
 add_action('after_setup_theme', 'hmbase_menus');
 
