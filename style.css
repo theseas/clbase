@@ -1,0 +1,15 @@
+/*
+Theme Name: hmbase
+Theme URI: http://hypermorph.com/
+Author: Hypermorph team
+Author URI: http://hypermorph.com/
+Description: Base wordpress themes for all hypermorph themes.
+Version: 0.1
+License: All rights reserved
+Tags: base-theme
+Text Domain: hmbase
+*/
+
+p{
+	color:red;
+}
