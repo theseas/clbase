@@ -46,4 +46,4 @@
 						<!--search end -->
 					</div>
 				</nav>
-		</search>
+		</section>
