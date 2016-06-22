@@ -8,7 +8,7 @@
 		<header>
 			<div>
 				<h1 id="header">
-					<a href=<?php blogninfo('url'); ?><?php bloginfo('name'); ?></a>
+					<a href=<?php bloginfo('url'); ?><?php bloginfo('name'); ?></a>
 				</h1>
 			</div>
 			<div>
