@@ -10,11 +10,8 @@
 				<div class="col-md-4">
 					<h1 id="header">
 						<a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a>
+						<small><?php bloginfo('description'); ?></small>
 					</h1>
-				</div>
-				<div class="col-md-4">&nbsp;</div>
-				<div class="col-md-4">
-					<small><?php bloginfo('description'); ?></small>
 				</div>
 			</div>
 
