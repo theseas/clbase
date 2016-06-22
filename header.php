@@ -9,9 +9,9 @@
 	<div class="container">
 		<header>
 			<div class="row">
-				<div class="col-xs-6">
+				<div class="col-xs-8">
 					<h1 id="header">
-						<a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a>
+						<a href="<?php echo esc_url(home_url()); ?>"><?php bloginfo('name'); ?></a>
 						<small><?php bloginfo('description'); ?></small>
 					</h1>
 				</div>
@@ -24,7 +24,7 @@
 						<li><a href="#">test</a></li>
 					</ul>
 				</div>
-				<div class="col-xs-4">
+				<div class="col-xs-4 search">
 					<?php echo get_search_form(); ?>
 				</div>
 			</div>

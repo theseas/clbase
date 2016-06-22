@@ -10,6 +10,15 @@ Tags: base-theme
 Text Domain: hmbase
 */
 
-p{
-	color:red;
+/* Search BEGIN */
+
+.search div{
+	display:inline-block;
 }
+
+.search label{
+	display: none;
+}
+
+
+/* Search END */
