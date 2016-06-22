@@ -66,4 +66,10 @@ function hmbase_get_script($name, $path = ''){
 	return $file;
 }
 
+
+// Adds feed links into head section
+add_theme_support('automatic-feed-links');
+
+// Adds title tag customization option
+add_theme_support('title-tag');
 ?>
