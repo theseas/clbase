@@ -11,7 +11,7 @@ function hmbase_enqueue_styles(){
 	wp_enqueue_style("hmbase-main-css", hmbase_get_style('style'));
 	wp_enqueue_style("hmbase-bootstrap-css", hmbase_get_style('bootstrap', 'css/bootstrap'));
 	wp_enqueue_style("hmbase-bootstrap-theme-css", hmbase_get_style('bootstrap-theme', 'css/bootstrap'));
-	wp_enqueue_style('hmbase-jquery-mobile-css', hmbase_get_style('jquery.mobile-1.4.5', '/css/jquery-mobile/'));
+	//wp_enqueue_style('hmbase-jquery-mobile-css', hmbase_get_style('jquery.mobile-1.4.5', '/css/jquery-mobile/'));
 }
 add_action('wp_enqueue_scripts', 'hmbase_enqueue_styles');
 
@@ -41,7 +41,7 @@ function hmbase_get_style($name, $path = ""){
  */
 function hmbase_enqueue_scripts(){
 	wp_enqueue_script('hmbase-jquery-js', hmbase_get_script('jquery-2.2.4'));
-	wp_enqueue_script('hmbase-jquery-mobile-js', hmbase_get_script('jquery.mobile-1.4.5'));
+	//wp_enqueue_script('hmbase-jquery-mobile-js', hmbase_get_script('jquery.mobile-1.4.5'));
 	wp_enqueue_script('hmbase-bootstrap-js', hmbase_get_script('bootstrap'));
 }
 add_action('wp_enqueue_scripts', 'hmbase_enqueue_scripts');
