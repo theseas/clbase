@@ -73,7 +73,4 @@ add_theme_support('automatic-feed-links');
 // Adds title tag customization option
 //add_theme_support('title-tag');
 
-if((is_admin() || is_network_admin) && !is_admin_bar_showing()){
-	show_admin_bar();
-}
 ?>

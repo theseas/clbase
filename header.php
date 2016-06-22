@@ -7,6 +7,13 @@
 	<?php wp_head(); ?>
 </head>
 <body>
+	<div class="container-fluid">
+		<?php
+		if(is_admin() || is_network_admin()){
+			show_admin_bar();
+		}
+		?>
+	</div>
 	<div class="container">
 		<section id="header">
 				<header>
