@@ -33,6 +33,7 @@
 					<div class="row navbar navbar-default">
 						<!-- menu start -->
 						<div id="menu" class="col-xs-9">
+							<?php wp_nav_menu(); ?>
 							<ul>
 								<li><a href="#">test</a></li>
 							</ul>

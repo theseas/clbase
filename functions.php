@@ -67,6 +67,11 @@ function hmbase_get_script($name, $path = ''){
 }
 
 
+function hmbase_menus{
+	register_nav_menu('hmbase-top', __('Top Menu', 'hmbase'));
+}
+add_action('after_setup_theme', 'hmbase_menus');
+
 // Adds feed links into head section
 add_theme_support('automatic-feed-links');
 
