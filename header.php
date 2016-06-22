@@ -9,7 +9,8 @@
 <body>
 	<div class="container-fluid">
 		<?php
-		if(is_admin() || is_network_admin()){
+		var_dump(is_admin());
+		if(is_admin()){
 			show_admin_bar();
 		}
 		?>
