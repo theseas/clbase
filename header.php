@@ -11,7 +11,7 @@
 		<section id="header">
 				<header>
 					<div id="header" class="jumbotron">
-						<div class="col-xs-8">
+						<div>
 							<h1 id="header">
 								<a href="<?php echo esc_url(home_url()); ?>"><?php bloginfo('name'); ?></a>
 								<small><?php bloginfo('description'); ?></small>
