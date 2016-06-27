@@ -9,7 +9,6 @@
 <body <?php body_class(); ?>>
 	<div class="container-fluid">
 		<?php
-		var_dump(is_admin());
 		if(is_admin()){
 			show_admin_bar();
 		}
@@ -33,15 +32,17 @@
 					<div class="row navbar navbar-default">
 						<!-- menu start -->
 						<div id="menu" class="col-xs-9">
-							<?php wp_nav_menu(array(
+							<?php 
+							require_once('hmbase_menu_walker.php');
+							wp_nav_menu(array(
 								'menu'=>'hmbase-top',
-								'menu_class'=>'nav navbar-nav',
-								'container'=>'div',
-								'container_class'=>'container-fluid'
-								)); ?>
-							<ul>
-								<li><a href="#">test</a></li>
-							</ul>
+							//	'menu_class'=>'nav navbar-nav',
+							//	'container'=>'div',
+							//	'container_class'=>'container-fluid',
+								'depth' => 2,
+								'walker' => new Hmbase_Menu_Walker()
+								));
+							?>
 						</div>
 						<!-- menu end -->
 						<!-- search start -->
