@@ -6,7 +6,7 @@
 	<title><?php wp_title(); ?></title>
 	<?php wp_head(); ?>
 </head>
-<body>
+<body <?php body_class(); ?>>
 	<div class="container-fluid">
 		<?php
 		var_dump(is_admin());
@@ -33,7 +33,12 @@
 					<div class="row navbar navbar-default">
 						<!-- menu start -->
 						<div id="menu" class="col-xs-9">
-							<?php wp_nav_menu(); ?>
+							<?php wp_nav_menu(array(
+								'menu'=>'hmbase-top',
+								'menu_class'=>'nav navbar-nav',
+								'container'=>'div',
+								'container_class'=>'container-fluid'
+								)); ?>
 							<ul>
 								<li><a href="#">test</a></li>
 							</ul>

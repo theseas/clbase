@@ -12,6 +12,9 @@
 					// The Loop Ends
 						} // end while
 					} // end if
+					else{
+						_e('Sorry, no posts matched your criteria.');
+					}
 				?>
 			</div>
 		</main>
