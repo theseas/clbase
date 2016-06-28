@@ -50,26 +50,58 @@ class Hmbase_Menu_Walker extends Walker_Nav_Menu{
 		$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
 
 		$item->classes = [];
-		$classes="";
+		$elem_li='<li id="nav-menu-item-' . $item->ID . '"';
+		$attributes = '';
+
 
 		if($item->current){
 			$item->classes[] = 'active';
 		}
 
-		hmbase_log('walker', $args->walker);
 		if($args->walker->has_children){
 			$item->classes[] = 'dropdown';
 			$item->url = '#';
 			$args->link_after = '<span class="caret"></span>';
+			$attributes .= ' class="dropdown-toggle" data-toggle="dropdown"';
 		}
 
 		if(!empty($item->classes)){
-			$classes = implode(' ', apply_filters('nav_menu_css_class', $item->classes , $item));
+			$classes = esc_attr(implode(' ', apply_filters('nav_menu_css_class', $item->classes , $item)));
+			$elem_li .= sprintf(' class="%1$s"' , $classes);
 		}
 
-		$output .= $indent . '<li class="' . $classes . '">';
-			
-		//$output .= apply_filter('walker_nav_menu_start_el');
+		if(!empty($item->attr_title)){
+			$attr_title = esc_attr($item->attr_title);
+			$attributes .= sprintf(' title="%1$s"', $attr_title);
+		}
+
+		if(!empty($item->target)){
+			$target = esc_attr($item->target);
+			$attributes .= sprintf(' target="%1$s"', $target);
+		}
+
+		if(!empty($item->xfn)){
+			$xfn = esc_attr($item->xfn);
+			$attributes .= sprintf(' rel="%1$s"', $xfn);
+		}
+
+		if(!empty($item->url)){
+			$url = esc_attr($item->url);
+			$attributes .= sprintf(' href="%1$s"', $url);
+		}
+
+		$output .= $indent . $elem_li;
+
+		$item_output = sprintf('%1$s<a%2$s>%3$s%4$s%5$s</a>%6$s',
+			$args->before,
+			$attributes,
+			$args->link_before,
+			apply_filters('the_title', $item->title, $item->ID),
+			$args->link_after,
+			$args->after
+		);
+
+		$output .= apply_filter('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
 	}
 
 } // Walker_Nav_Menu
