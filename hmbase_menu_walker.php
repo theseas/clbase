@@ -66,7 +66,7 @@ class Hmbase_Menu_Walker extends Walker_Nav_Menu{
 			$classes = implode(' ', applyfilters('nav_menu_css_class', [] , $item));
 		}
 
-		output .= $indent . '<li class="' . $classes . '">';
+		$output .= $indent . '<li class="' . $classes . '">';
 			
 		//$output .= apply_filter('walker_nav_menu_start_el');
 	}
