@@ -27,7 +27,7 @@
 										<img class="img-responsive" src="<?php echo($header_image); ?>" alt="<?php bloginfo('title'); ?>">
 									</div>
 									<div class="col-md-2"></div>
-									<div class="col-md-3 text-center">
+									<div class="col-md-4 text-center">
 										<p><?php bloginfo('description'); ?></p>
 									</div>
 								<?php }else{ ?>
