@@ -90,6 +90,7 @@ class Hmbase_Menu_Walker extends Walker_Nav_Menu{
 			$attributes .= sprintf(' href="%1$s"', $url);
 		}
 
+		$elem_li .= '>';
 		$output .= $indent . $elem_li;
 
 		$item_output = sprintf('%1$s<a%2$s>%3$s%4$s%5$s</a>%6$s',
