@@ -56,6 +56,7 @@ class Hmbase_Menu_Walker extends Walker_Nav_Menu{
 			$item->classes[] = 'active';
 		}
 
+		hmbase_log('walker', $args->walker);
 		if($args->walker->has_children){
 			$item->classes[] = 'dropdown';
 			$item->url = '#';
@@ -63,7 +64,7 @@ class Hmbase_Menu_Walker extends Walker_Nav_Menu{
 		}
 
 		if(!empty($item->classes)){
-			$classes = implode(' ', apply_filters('nav_menu_css_class', [] , $item));
+			$classes = implode(' ', apply_filters('nav_menu_css_class', $item->classes , $item));
 		}
 
 		$output .= $indent . '<li class="' . $classes . '">';
