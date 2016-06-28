@@ -3,7 +3,9 @@
 <head>
 	<meta value="Content-Type" content="<?php bloginfo('html_type');?> charset=<?php bloginfo('charset');?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title><?php bloginfo('title'); ?></title>
+	<title><?php bloginfo('title');
+		hmbase_log('get_the_title', get_the_title());
+		hmbase_log('the_title_attribute', the_title_attribute()); ?></title>
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
@@ -18,13 +20,13 @@
 		<section id="header">
 				<header>
 					<div id="header" class="row jumbotron">
-						<div >
+						<div>
 							<h1 id="header">
 								<?php
 								$header_image = get_header_image();
 								if(!empty($header_image)){
 								?>
-									<img src="<?php echo($header_image); ?>" alt="<?php bloginfo('title'); ?>">
+									<img class="img-responsive" src="<?php echo($header_image); ?>" alt="<?php bloginfo('title'); ?>">
 								<?php }else{ ?>
 									<a href="<?php echo esc_url(home_url()); ?>"><?php bloginfo('name'); ?></a>
 									<small><?php bloginfo('description'); ?></small>
