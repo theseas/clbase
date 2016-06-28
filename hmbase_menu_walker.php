@@ -60,7 +60,7 @@ class Hmbase_Menu_Walker extends Walker_Nav_Menu{
 		hmbase_log('args', $args);
 		
 
-		$output .= apply_filter('walker_nav_menu_start_el');
+		//$output .= apply_filter('walker_nav_menu_start_el');
 	}
 
 } // Walker_Nav_Menu
