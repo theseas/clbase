@@ -78,7 +78,10 @@ add_action('after_setup_theme', 'hmbase_menus');
 // Adds feed links into head section
 add_theme_support('automatic-feed-links');
 
+// custom header suuport (header image etc.)
+add_theme_sppurt('custom-header');
+
 // Adds title tag customization option
-//add_theme_support('title-tag');
+add_theme_support('title-tag');
 
 ?>
