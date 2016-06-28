@@ -62,7 +62,7 @@ class Hmbase_Menu_Walker extends Walker_Nav_Menu{
 			$args->link_after = '<span class="caret"></span>';
 		}
 
-		if(!empty($item->classes){
+		if(!empty($item->classes)){
 			$classes = implode(' ', applyfilters('nav_menu_css_class', [] , $item));
 		}
 
