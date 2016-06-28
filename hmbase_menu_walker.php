@@ -49,11 +49,25 @@ class Hmbase_Menu_Walker extends Walker_Nav_Menu{
 	public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
 		$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
 
+		$item->classes = [];
+		$classes="";
 
-
-		if($item->ID === $id){
+		if($item->current){
 			$item->classes[] = 'active';
 		}
+
+		if($args->walker->has_children){
+			$item->classes[] = 'dropdown';
+			$item->url = '#';
+			$args->link_after = '<span class="caret"></span>';
+		}
+
+		if(!empty($item->classes){
+			$classes = implode(' ', applyfilters('nav_menu_css_class', [] , $item));
+		}
+
+		output .= $indent . '<li class="' . $classes . '">';
+			
 
 		hmbase_log('item', $item);
 

@@ -36,9 +36,9 @@
 							require_once('hmbase_menu_walker.php');
 							wp_nav_menu(array(
 								'menu'=>'hmbase-top',
-							//	'menu_class'=>'nav navbar-nav',
-							//	'container'=>'div',
-							//	'container_class'=>'container-fluid',
+								'menu_class'=>'nav navbar-nav',
+								'container'=>'div',
+								'container_class'=>'container-fluid',
 								'depth' => 2,
 								'walker' => new Hmbase_Menu_Walker()
 								));
