@@ -3,7 +3,7 @@
  * Copyright: hypermorph 2016
  */
 
-require_once('utils.php')
+require_once('utils.php');
 
 /*
  * @description Add theme's css files to wp_head for display.

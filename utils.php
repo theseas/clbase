@@ -7,9 +7,11 @@
  * @param mixed		$obj 	Object to be loged
  */
 function hmbase_log($name, $obj){
-	$obj_str = print_r($obj, true);
-	$obj_str = $name . ': ' .str_replace("\n", '', $obj_str);
-	error_log($obj_str);
+	if(WP_DEBUG===true){
+		$obj_str = print_r($obj, true);
+		$obj_str = $name . ': ' .str_replace("\n", '', $obj_str);
+		error_log($obj_str);
+	}
 }
 
 ?>
