@@ -3,7 +3,7 @@
 <head>
 	<meta value="Content-Type" content="<?php bloginfo('html_type');?> charset=<?php bloginfo('charset');?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title><?php wp_title(); ?></title>
+	<title><?php bloginfo('title'); ?></title>
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
@@ -20,8 +20,15 @@
 					<div id="header" class="row jumbotron">
 						<div >
 							<h1 id="header">
-								<a href="<?php echo esc_url(home_url()); ?>"><?php bloginfo('name'); ?></a>
-								<small><?php bloginfo('description'); ?></small>
+								<?php
+								$header_image = get_header_image();
+								if(!empty($header_image)){
+								?>
+									<img src="<?php echo($header_image); ?>" alt="<?php bloginfo('title'); ?>">
+								<?php }else{ ?>
+									<a href="<?php echo esc_url(home_url()); ?>"><?php bloginfo('name'); ?></a>
+									<small><?php bloginfo('description'); ?></small>
+								<?php } //end if ?>
 							</h1>
 						</div>
 					</div>
