@@ -9,7 +9,8 @@ get_header();
 					// The Loop Begins
 					if(have_posts()){
 						while(have_posts()){
-							hmbase_log('the_post', the_post());
+							the_post();
+							hmbase_log('the_post', $post);
 							get_template_part('template_parts/content', get_post_format());
 				?>
 				<?php
