@@ -3,9 +3,6 @@
 <head>
 	<meta value="Content-Type" content="<?php bloginfo('html_type');?> charset=<?php bloginfo('charset');?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title><?php bloginfo('title');
-		hmbase_log('get_the_title', get_the_title());
-		hmbase_log('the_title_attribute', the_title_attribute()); ?></title>
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
