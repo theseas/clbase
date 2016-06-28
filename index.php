@@ -1,4 +1,7 @@
-<?php get_header(); ?>
+<?php
+define('WP_USE_THEMES', false);
+get_header();
+?>
 	<section>
 		<main>
 			<div>
@@ -6,7 +9,8 @@
 					// The Loop Begins
 					if(have_posts()){
 						while(have_posts()){
-							the_post();
+							hmbase_log('the_post', the_post());
+							get_template_part('template_parts/content', get_post_format());
 				?>
 				<?php
 					// The Loop Ends
