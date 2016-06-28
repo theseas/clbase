@@ -63,6 +63,8 @@ class Hmbase_Menu_Walker extends Walker_Nav_Menu{
 			$item->url = '#';
 			$args->link_after = '<span class="caret"></span>';
 			$attributes .= ' class="dropdown-toggle" data-toggle="dropdown"';
+		}else{
+			$args->link_after = '';
 		}
 
 		if(!empty($item->classes)){
