@@ -26,7 +26,12 @@
 								$header_image = get_header_image();
 								if(!empty($header_image)){
 								?>
-									<img class="img-responsive" src="<?php echo($header_image); ?>" alt="<?php bloginfo('title'); ?>">
+									<div class="col-md-4">
+										<img class="img-responsive" src="<?php echo($header_image); ?>" alt="<?php bloginfo('title'); ?>">
+									</div>
+									<div class="col-md-3">
+										<p><?php bloginfo('description'); ?></p>
+									</div>
 								<?php }else{ ?>
 									<a href="<?php echo esc_url(home_url()); ?>"><?php bloginfo('name'); ?></a>
 									<small><?php bloginfo('description'); ?></small>
