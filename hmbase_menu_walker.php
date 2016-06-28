@@ -101,7 +101,7 @@ class Hmbase_Menu_Walker extends Walker_Nav_Menu{
 			$args->after
 		);
 
-		$output .= apply_filter('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
+		$output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
 	}
 
 } // Walker_Nav_Menu
