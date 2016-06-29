@@ -67,21 +67,44 @@ function hmbase_get_script($name, $path = ''){
 	return $file;
 }
 
-
-function hmbase_menus(){
+/*
+ * @description Initialize theme
+ */
+function hmbase_setup(){
+	load_theme_textdomain('hmbase', get_template_directory() . '/languages');
+	
 	register_nav_menus( array(
-		'hmbase-top' => __('Top menu', 'hmbase')
+		'hmbase-top' => __('Top menu', 'hmbase'),
+		'social' => __('Social Links Menu', 'hmbase'
 	));
+	
+	// Adds feed links into head section
+	add_theme_support('automatic-feed-links');
+
+	// custom header suuport (header image etc.)
+	add_theme_support('custom-header');
+
+	// Adds title tag customization option
+	add_theme_support('title-tag');
+
+	// Make the output html5 for the following
+	add_theme_support('html5', 
+		['search-form',
+		'comment-form',
+		'comment-list',
+		'gallery',
+		'caption']);
+	
+	// Enable post format support
+	add-theme_support('post-formats',
+		['aside',
+		'image',
+		'video',
+		'gallery',
+		'audio']);
 }
 add_action('after_setup_theme', 'hmbase_menus');
 
-// Adds feed links into head section
-add_theme_support('automatic-feed-links');
 
-// custom header suuport (header image etc.)
-add_theme_support('custom-header');
-
-// Adds title tag customization option
-add_theme_support('title-tag');
 
 ?>
