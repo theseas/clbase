@@ -103,12 +103,24 @@ function hmbase_setup(){
 		'gallery',
 		'audio']);
 
-	if(is_admin() || is_network_admin){
+	if(is_admin() || is_network_admin()){
 		show_admin_bar(true);
 	}
 }
 add_action('after_setup_theme', 'hmbase_setup');
 
-
+function hmbase_widgets_init(){
+	// Registrer right sidebar
+	register_sidebar([
+		'name' => __('Right Sidebar', 'hmbase'),
+		'id' => 'right-sidebar',
+		'description' => __('Add widgets here to apprear to the sidebar.', 'hmbase'),
+		'class' => 'col-md-3 hidden-xs hidden-sm',
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget' => '</section>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>']);
+}
+add_action('widgets_init', 'hmbase_widgets_init');
 
 ?>
