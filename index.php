@@ -22,15 +22,8 @@ get_header();
 			</div>
 			<?php
 			if(is_active_sidebar('right-sidebar')){
-			?>
-				<aside>
-					<div>
-						<?php get_sidebar(); ?>
-					</div>
-				</aside>
-			<?php
-			} // end sidebar if 
-			?>
+				get_sidebar();
+			} // end sidebar if ?>
 		</main>
 	</section>
 </div>
