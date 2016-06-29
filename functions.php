@@ -102,6 +102,10 @@ function hmbase_setup(){
 		'video',
 		'gallery',
 		'audio']);
+
+	if(is_admin() || is_network_admin){
+		show_admin_bar(true);
+	}
 }
 add_action('after_setup_theme', 'hmbase_setup');
 

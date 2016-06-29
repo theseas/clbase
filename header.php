@@ -6,13 +6,6 @@
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-	<div class="container-fluid">
-		<?php
-		if(is_admin()){
-			show_admin_bar();
-		}
-		?>
-	</div>
 	<div class="container">
 		<section id="header">
 				<header>
