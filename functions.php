@@ -75,8 +75,8 @@ function hmbase_setup(){
 	
 	register_nav_menus( array(
 		'hmbase-top' => __('Top menu', 'hmbase'),
-		'social' => __('Social Links Menu', 'hmbase'
-	));
+		'social' => __('Social Links Menu', 'hmbase')
+		));
 	
 	// Adds feed links into head section
 	add_theme_support('automatic-feed-links');
