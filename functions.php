@@ -103,7 +103,7 @@ function hmbase_setup(){
 		'gallery',
 		'audio']);
 }
-add_action('after_setup_theme', 'hmbase_menus');
+add_action('after_setup_theme', 'hmbase_setup');
 
 
 
