@@ -96,7 +96,7 @@ function hmbase_setup(){
 		'caption']);
 	
 	// Enable post format support
-	add-theme_support('post-formats',
+	add_theme_support('post-formats',
 		['aside',
 		'image',
 		'video',
