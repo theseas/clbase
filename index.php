@@ -18,6 +18,8 @@ get_header();
 					else{
 						_e('Sorry, no posts matched your criteria.');
 					}
+					
+					echo get_the_posts_pagination();
 				?>
 			</div>
 			<?php

@@ -32,6 +32,9 @@
 					</div>
 				</header>
 		</section>
+		<?php
+		if(has_nav_menu('hmbase-top')){
+		?>
 		<section id="navigation">
 				<nav>
 					<div class="row navbar navbar-default">
@@ -58,3 +61,6 @@
 					</div>
 				</nav>
 		</section>
+		<?php
+		} // end if has_nav_menu 
+		?>
