@@ -3,7 +3,7 @@ get_header();
 ?>
 	<section>
 		<main>
-			<div>
+			<div class="<?php echo(is_active_sidebar('right-sidebar')?'col-md-9 col-lg-9':'');?>">
 				<?php
 					// The Loop Begins
 					if(have_posts()){
@@ -20,6 +20,17 @@ get_header();
 					}
 				?>
 			</div>
+			<?php
+			if(is_active_sidebar('right-sidebar')){
+			?>
+				<aside>
+					<div>
+						get_sidebar();
+					</div>
+				</aside>
+			<?php
+			} // end sidebar if 
+			?>
 		</main>
 	</section>
 </div>
