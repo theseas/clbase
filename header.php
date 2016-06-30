@@ -1,3 +1,6 @@
+<?php
+require_once('hmbase_menu_walker.php');
+?>
 <!DOCTYPE html>
 <html lang="<?php bloginfo('language'); ?>">
 <head>
@@ -41,7 +44,6 @@
 						<!-- menu start -->
 						<div id="menu" class="col-xs-9">
 							<?php 
-							require_once('hmbase_menu_walker.php');
 							wp_nav_menu(array(
 								'menu'=>'hmbase-top',
 								'menu_class'=>'nav navbar-nav',

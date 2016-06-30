@@ -6,8 +6,6 @@
  * @version 0.1
  */
 
-require_once('utils.php');
-
 /**
  * Create HTML list of nav menu items.
  *
