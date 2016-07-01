@@ -14,3 +14,47 @@ Text Domain: hmbase
 
 
 /* Search END */
+
+/* Article BEGIN */
+
+.article img{
+	display:block;
+	clear:both;
+	max-width: 99%;
+}
+
+.article img.aligncenter{
+	margin:auto;
+}
+
+.article img.alignright{
+	display:inline-block;
+	margin: 5px 0px 5px 10px; 
+	float:right;
+}
+
+.article img.alignleft{
+	display:inline-block;
+	margin: 5px 10px 5px 0px;
+	float:left;
+}
+
+.article img.alignnone{
+	display:block;
+	left:0px;
+}
+
+.article .more-link{
+	color: #1e90ff;
+	text-decoration:none;
+	border-bottom: 1px dotted #1e90ff;
+}
+
+.article::after{
+	clear:both;
+	zoom:1;
+	height:0;
+	visibility: hidden;
+	display: block;
+}
+/* Article END */

@@ -4,6 +4,31 @@
  */
 
 
+/* 
+ * Utility Functions BEGIN
+ * -------------------------------------------
+ */
+
+/*
+ * @description Formats and logs an object
+ * @param string	$name	Name of the object	 
+ * @param mixed		$obj 	Object to be loged
+ */
+function hmbase_log($name, $obj){
+	if(WP_DEBUG===true){
+		$obj_str = print_r($obj, true);
+		$obj_str = $name . ': ' .str_replace("\n", '', $obj_str);
+		error_log($obj_str);
+	}
+}
+
+
+/* 
+ * Utility Functions END
+ * --------------------------------------------
+ */
+
+
 /*
  * @description Add theme's css files to wp_head for display.
  */
@@ -122,28 +147,6 @@ function hmbase_widgets_init(){
 }
 add_action('widgets_init', 'hmbase_widgets_init');
 
-// Utility Functions
-
-/*
- * @description Formats and logs an object
- * @param string	$name	Name of the object	 
- * @param mixed		$obj 	Object to be loged
- */
-function hmbase_log($name, $obj){
-	if(WP_DEBUG===true){
-		$obj_str = print_r($obj, true);
-		$obj_str = $name . ': ' .str_replace("\n", '', $obj_str);
-		error_log($obj_str);
-	}
-}
 
 
-/*
- * @description Take some text and make a short versions of it (excerpt).
- * @param	$text	text to shorten
- * @param	$length	maximum legth of the returned string
- * @return	Shorter version of $text
- */
-function hmbase_make_excerpt($text, $length){
-}
 ?>
