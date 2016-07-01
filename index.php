@@ -1,6 +1,4 @@
-<?php
-get_header();
-?>
+<?php get_header(); ?>
 	<section>
 		<main>
 			<div class="<?php echo(is_active_sidebar('right-sidebar')?'col-md-9 col-lg-9':'');?>">
