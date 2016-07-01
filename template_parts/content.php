@@ -1,6 +1,6 @@
 <article>
 	<div class="container-fluid article">
-		<h2>
+		<h2 class="text-center">
 			<a href="<?php echo(esc_attr(get_permalink())); ?>"><?php the_title(); ?></a>
 		</h2>
 		<p>
@@ -32,7 +32,13 @@
 			<div class="col-md-3 col-lg-3">
 				<?php 
 				printf("%s(%d)",__('Comments'), get_comments_number());
-				?>				
+				?>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<?php the_tags(); ?>
+			</div>
 		</div>
 	</div>
 </article>

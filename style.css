@@ -10,12 +10,28 @@ Tags: base-theme
 Text Domain: hmbase
 */
 
-/* Search BEGIN */
+/* Main BEGIN */
 
+.main{
+	margin-top:-3%;
+	border-left:1px solid #a0a0a0;
+	border-right:1px solid #a0a0a0;
+	border-bottom:1px solid #a0a0a0;
+	-moz-border-radius:0px 0px 5px 5px;
+	-webkit-border-radius:0px 0px 5px 5px;
+	-o-border-radius:0px 0px 5px 5px;
+	border-radius:0px 0px 5px 5px;
+}
 
-/* Search END */
+/* Main END */
 
 /* Article BEGIN */
+
+.article{
+	border-bottom:1px dashed #303030;
+	padding:2% 0% 2% 0%;
+	margin:2% 0% 2% 0%;
+}
 
 .article img{
 	display:block;
@@ -58,3 +74,19 @@ Text Domain: hmbase
 	display: block;
 }
 /* Article END */
+
+/* Pagination BEGIN */
+
+.pagination h2{
+	display:none;
+}
+
+/* Pagination END */
+
+/* Sidebar BEGIN */
+
+.sidebar{
+	border-left: 2px solid #303030;
+}
+
+/* Sidebar END */

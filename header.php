@@ -10,8 +10,8 @@ require_once('hmbase_menu_walker.php');
 </head>
 <body <?php body_class(); ?>>
 	<div class="container">
-		<section id="header">
-				<header>
+		<header>
+				<section id="header">
 					<div id="header" class="row jumbotron">
 						<div>
 							<h1 id="header">
@@ -33,16 +33,16 @@ require_once('hmbase_menu_walker.php');
 							</h1>
 						</div>
 					</div>
-				</header>
-		</section>
+				</section>
+		</header>
 		<?php
 		if(has_nav_menu('hmbase-top')){
 		?>
-		<section id="navigation">
-				<nav>
+		<nav>
+				<section id="navigation">
 					<div class="row navbar navbar-default">
 						<!-- menu start -->
-						<div id="menu" class="col-xs-9">
+						<div id="menu" class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
 							<?php 
 							wp_nav_menu(array(
 								'menu'=>'hmbase-top',
@@ -56,13 +56,13 @@ require_once('hmbase_menu_walker.php');
 						</div>
 						<!-- menu end -->
 						<!-- search start -->
-						<div class="col-xs-3 search">
+						<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 search">
 							<?php echo get_search_form(); ?>
 						</div>
 						<!--search end -->
 					</div>
-				</nav>
-		</section>
+				</section>
+		</nav>
 		<?php
 		} // end if has_nav_menu 
 		?>
