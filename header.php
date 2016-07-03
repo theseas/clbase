@@ -7,6 +7,7 @@ require_once('hmbase_menu_walker.php');
 	<meta value="Content-Type" content="<?php bloginfo('html_type');?> charset=<?php bloginfo('charset');?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<?php wp_head(); ?>
+	<?php show_admin_bar(true); ?>
 </head>
 <body <?php body_class(); ?>>
 	<div class="container">
@@ -40,12 +41,13 @@ require_once('hmbase_menu_walker.php');
 		?>
 		<nav>
 				<section id="navigation">
-					<div class="row navbar navbar-default">
+					<div class="row navbar navbar-inverse">
 						<!-- menu start -->
 						<div id="menu" class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
 							<?php 
 							wp_nav_menu(array(
-								'menu'=>'hmbase-top',
+								'menu'=>'top-menu',
+								'theme-location'=>'hmbase-top',
 								'menu_class'=>'nav navbar-nav',
 								'container'=>'div',
 								'container_class'=>'container-fluid',

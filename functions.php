@@ -98,7 +98,8 @@ function hmbase_setup(){
 	load_theme_textdomain('hmbase', get_template_directory() . '/languages');
 	
 	register_nav_menus( array(
-		'hmbase-top' => __('Top menu', 'hmbase'),
+		'hmbase-top' => __('Top Menu', 'hmbase'),
+		'hmbase-footer'=>__('Footer Menu', 'hmbase'),
 		'social' => __('Social Links Menu', 'hmbase')
 		));
 	
@@ -127,9 +128,6 @@ function hmbase_setup(){
 		'gallery',
 		'audio']);
 
-	if(is_admin() || is_network_admin()){
-		show_admin_bar(true);
-	}
 }
 add_action('after_setup_theme', 'hmbase_setup');
 
@@ -138,12 +136,27 @@ function hmbase_widgets_init(){
 	register_sidebar([
 		'name' => __('Right Sidebar', 'hmbase'),
 		'id' => 'right-sidebar',
-		'description' => __('Add widgets here to apprear to the sidebar.', 'hmbase'),
+		'description' => __('Add widgets here to appear to the sidebar.', 'hmbase'),
 		'class' => 'col-md-3 hidden-xs hidden-sm',
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget' => '</section>',
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>']);
+	
+	register_sidebar([
+		'name'=>__('Footer', 'hmbase'),
+		'id'=>'footer',
+		'description'=>__('Add widgets here to appear to the footer.', 'hmbase'),
+		'before_widget' => '<section id="%1$s" class="footer-widget %2$s">',
+		'after_widget' => '</section>',
+		'before_title' => '<h4 class="footer-widget-title">',
+		'after_title' => '</h4>']);
+	
+	if(true){
+		show_admin_bar(true);
+	}else{
+		show_admin_bar(false);
+	}
 }
 add_action('widgets_init', 'hmbase_widgets_init');
 

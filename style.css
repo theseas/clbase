@@ -17,10 +17,10 @@ Text Domain: hmbase
 	border-left:1px solid #a0a0a0;
 	border-right:1px solid #a0a0a0;
 	border-bottom:1px solid #a0a0a0;
-	-moz-border-radius:0px 0px 5px 5px;
-	-webkit-border-radius:0px 0px 5px 5px;
-	-o-border-radius:0px 0px 5px 5px;
-	border-radius:0px 0px 5px 5px;
+	-moz-border-radius:0px 0px 0px 0px;
+	-webkit-border-radius:0px 0px 0px 0px;
+	-o-border-radius:0px 0px 0px 0px;
+	border-radius:0px 0px 0px 0px;
 }
 
 /* Main END */
@@ -86,7 +86,76 @@ Text Domain: hmbase
 /* Sidebar BEGIN */
 
 .sidebar{
-	border-left: 2px solid #303030;
+	height:100;
+	border-left:1px solid #a0a0a0;
 }
 
 /* Sidebar END */
+
+/* footer BEGIN */
+
+.footer{
+	border:0px solid #303030;
+	border-radius:0px 0px 10px 10px;
+	background:#303030;
+	background:linear-gradient(#303030, #202020);
+	padding-top:0%;
+	padding-bottom:0%;
+	height:200%;
+	margin-bottom:5%;
+	color:#aaa;
+	text-align:center;
+	height:100%;
+}
+
+.footer>div>*{
+	padding:2% 0%;
+	border-right:1px dashed #444;
+	border-left:1px dashed #444;
+	min-height:100%;
+}
+
+.footer>div>*:first-child{
+	border-left:0px;
+}
+
+.footer>div>*:last-child{
+	border-right:0px;
+}
+
+.footer ul{
+	list-style-type:none;
+	margin:auto;
+}
+
+
+.footer a, .footer a:visited{
+	color:#aaa;
+	text-decoration:none;
+	border-bottom:1px dotted #aaa;
+}
+
+.footer a:active, .footer a:hover{
+	color:#fff;
+	text-decoration:none;
+	border-bottom:1px solid #fff;
+}
+
+@media (max-width:768px){
+	.footer>div>*{
+		border:0px;
+		padding:5% 0% 5% 0%;
+		border-top:1px dashed #444;
+		border-bottom:1px dashed #444;
+	}
+
+	.footer>div>*:first-child{
+		border-top:0px;
+	}
+
+	.footer>div>*:last-child{
+		border-bottom:0px;
+	}
+
+}
+/* footer END */

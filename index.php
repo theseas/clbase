@@ -32,6 +32,7 @@
 				get_sidebar();
 			} // end sidebar if ?>
 	</div>
+	<?php get_footer() ?>
 </div>
 </body>
 </html>
