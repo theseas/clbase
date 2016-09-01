@@ -34,6 +34,9 @@ function hmbase_log($name, $obj){
  */
 function hmbase_enqueue_styles(){
 	wp_enqueue_style("hmbase-main-css", hmbase_get_style('style'));
+	wp_enqueue_style("jquery-ui", hmbase_get_style('jquery-ui', 'css/jquery-ui'));
+	wp_enqueue_style("jquery-ui-theme", hmbase_get_style('jquery-ui.theme', 'css/jquery-ui'));
+	wp_enqueue_style("jquery-ui-structure", hmbase_get_style('jquery-ui.structure', 'css/jquery-ui'));
 	wp_enqueue_style("hmbase-bootstrap-css", hmbase_get_style('bootstrap', 'css/bootstrap'));
 	wp_enqueue_style("hmbase-bootstrap-theme-css", hmbase_get_style('bootstrap-theme', 'css/bootstrap'));
 	//wp_enqueue_style('hmbase-jquery-mobile-css', hmbase_get_style('jquery.mobile-1.4.5', '/css/jquery-mobile/'));
@@ -65,7 +68,8 @@ function hmbase_get_style($name, $path = ""){
  * @description Add theme's js file in wp_head for display
  */
 function hmbase_enqueue_scripts(){
-	wp_enqueue_script('hmbase-jquery-js', hmbase_get_script('jquery-2.2.4'));
+	wp_enqueue_script('hmbase-jquery-js', hmbase_get_script('jquery'));
+	wp_enqueue_script('jquery-ui', hmbase_get_script('jquery-ui'));
 	//wp_enqueue_script('hmbase-jquery-mobile-js', hmbase_get_script('jquery.mobile-1.4.5'));
 	wp_enqueue_script('hmbase-bootstrap-js', hmbase_get_script('bootstrap'));
 }
