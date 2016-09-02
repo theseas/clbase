@@ -36,3 +36,4 @@
 		&copy; Created by theseas for <a href="http://hypermorph.com/">hypermorph</a>
 	</div>
 </footer>
+<?php wp_footer(); ?>

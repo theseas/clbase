@@ -34,9 +34,9 @@ function hmbase_log($name, $obj){
  */
 function hmbase_enqueue_styles(){
 	wp_enqueue_style("hmbase-main-css", hmbase_get_style('style'));
-	wp_enqueue_style("jquery-ui", hmbase_get_style('jquery-ui', 'css/jquery-ui'));
-	wp_enqueue_style("jquery-ui-theme", hmbase_get_style('jquery-ui.theme', 'css/jquery-ui'));
-	wp_enqueue_style("jquery-ui-structure", hmbase_get_style('jquery-ui.structure', 'css/jquery-ui'));
+//	wp_enqueue_style("jquery-ui", hmbase_get_style('jquery-ui', 'css/jquery-ui'));
+//	wp_enqueue_style("jquery-ui-theme", hmbase_get_style('jquery-ui.theme', 'css/jquery-ui'));
+//	wp_enqueue_style("jquery-ui-structure", hmbase_get_style('jquery-ui.structure', 'css/jquery-ui'));
 	wp_enqueue_style("hmbase-bootstrap-css", hmbase_get_style('bootstrap', 'css/bootstrap'));
 	wp_enqueue_style("hmbase-bootstrap-theme-css", hmbase_get_style('bootstrap-theme', 'css/bootstrap'));
 	//wp_enqueue_style('hmbase-jquery-mobile-css', hmbase_get_style('jquery.mobile-1.4.5', '/css/jquery-mobile/'));
