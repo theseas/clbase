@@ -32,5 +32,6 @@ clean_bootstrap:
 	rm -f fonts/glyphicons*
 
 font-awesome:
+	#TODO: write this rule
 
 clean: clean_bootstrap clean_jquery
