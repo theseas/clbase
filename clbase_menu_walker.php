@@ -2,7 +2,7 @@
 /**
  * Navigation Menu template functions
  *
- * @package hmbase
+ * @package clbase
  * @version 0.1
  */
 
@@ -12,7 +12,7 @@
  * @since 3.0.0
  * @uses Walker
  */
-class Hmbase_Menu_Walker extends Walker_Nav_Menu{
+class Clbase_Menu_Walker extends Walker_Nav_Menu{
 	/**
 	 * Starts the list before the elements are added.
 	 *
