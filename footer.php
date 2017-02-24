@@ -6,7 +6,7 @@
 			<?php
 				wp_nav_menu([
 					'menu'=>'footer',
-					'theme-location'=>'hmbase-footer',
+					'theme-location'=>'clbase-footer',
 					'depth'=>1
 				]);
 			?>
@@ -33,7 +33,7 @@
 		</div>
 	</div>
 	<div class="row text-center">
-		&copy; Created by theseas for <a href="http://hypermorph.com/">hypermorph</a>
+		&copy; This website is created by <a href="http://coding-labs.eu/">coding-labs.eu</a>
 	</div>
 </footer>
 <?php wp_footer(); ?>
