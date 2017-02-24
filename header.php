@@ -1,5 +1,5 @@
 <?php
-require_once('hmbase_menu_walker.php');
+require_once('clbase_menu_walker.php');
 ?>
 <!DOCTYPE html>
 <html lang="<?php bloginfo('language'); ?>">
@@ -37,7 +37,7 @@ require_once('hmbase_menu_walker.php');
 				</section>
 		</header>
 		<?php
-		if(has_nav_menu('hmbase-top')){
+		if(has_nav_menu('clbase-top')){
 		?>
 		<nav>
 				<section id="navigation">
@@ -47,12 +47,12 @@ require_once('hmbase_menu_walker.php');
 							<?php 
 							wp_nav_menu(array(
 								'menu'=>'top-menu',
-								'theme-location'=>'hmbase-top',
+								'theme-location'=>'clbase-top',
 								'menu_class'=>'nav navbar-nav',
 								'container'=>'div',
 								'container_class'=>'container-fluid',
 								'depth' => 2,
-								'walker' => new Hmbase_Menu_Walker()
+								'walker' => new Clbase_Menu_Walker()
 								));
 							?>
 						</div>
