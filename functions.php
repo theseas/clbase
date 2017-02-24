@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright: hypermorph 2016
+ * Copyright: coding-labs.eu 2016-2017
  */
 
 
@@ -14,7 +14,7 @@
  * @param string	$name	Name of the object	 
  * @param mixed		$obj 	Object to be loged
  */
-function hmbase_log($name, $obj){
+function clbase_log($name, $obj){
 	if(WP_DEBUG===true){
 		$obj_str = print_r($obj, true);
 		$obj_str = $name . ': ' .str_replace("\n", '', $obj_str);
@@ -32,16 +32,12 @@ function hmbase_log($name, $obj){
 /*
  * @description Add theme's css files to wp_head for display.
  */
-function hmbase_enqueue_styles(){
-	wp_enqueue_style("hmbase-main-css", hmbase_get_style('style'));
-//	wp_enqueue_style("jquery-ui", hmbase_get_style('jquery-ui', 'css/jquery-ui'));
-//	wp_enqueue_style("jquery-ui-theme", hmbase_get_style('jquery-ui.theme', 'css/jquery-ui'));
-//	wp_enqueue_style("jquery-ui-structure", hmbase_get_style('jquery-ui.structure', 'css/jquery-ui'));
-	wp_enqueue_style("hmbase-bootstrap-css", hmbase_get_style('bootstrap', 'css/bootstrap'));
-	wp_enqueue_style("hmbase-bootstrap-theme-css", hmbase_get_style('bootstrap-theme', 'css/bootstrap'));
-	//wp_enqueue_style('hmbase-jquery-mobile-css', hmbase_get_style('jquery.mobile-1.4.5', '/css/jquery-mobile/'));
+function clbase_enqueue_styles(){
+	wp_enqueue_style("clbase-main-css", clbase_get_style('style'));
+	wp_enqueue_style("bootstrap", clbase_get_style('bootstrap', 'css/bootstrap'));
+	wp_enqueue_style("bootstrap-theme", clbase_get_style('bootstrap-theme', 'css/bootstrap'));
 }
-add_action('wp_enqueue_scripts', 'hmbase_enqueue_styles');
+add_action('wp_enqueue_scripts', 'clbase_enqueue_styles');
 
 /*
  * @description Constracts proper URIs for css files minified or not 
@@ -51,7 +47,7 @@ add_action('wp_enqueue_scripts', 'hmbase_enqueue_styles');
  			folder without leading or trailing slashes.
  * @return full uri for the file.
  */
-function hmbase_get_style($name, $path = ""){
+function clbase_get_style($name, $path = ""){
 	$file = "";
 	$path = trim($path, '/');
 	$path = empty($path)?"":'/'.$path;
@@ -65,15 +61,14 @@ function hmbase_get_style($name, $path = ""){
 }
 
 /*
- * @description Add theme's js file in wp_head for display
+ * @description Add theme's js files in wp_head for display
  */
-function hmbase_enqueue_scripts(){
-	wp_enqueue_script('hmbase-jquery-js', hmbase_get_script('jquery'));
-	wp_enqueue_script('jquery-ui', hmbase_get_script('jquery-ui'));
-	//wp_enqueue_script('hmbase-jquery-mobile-js', hmbase_get_script('jquery.mobile-1.4.5'));
-	wp_enqueue_script('hmbase-bootstrap-js', hmbase_get_script('bootstrap'));
+function clbase_enqueue_scripts(){
+	wp_enqueue_script('jquery', clbase_get_script('jquery'));
+	//wp_enqueue_script('jquery-ui', clbase_get_script('jquery-ui'));
+	wp_enqueue_script('bootstrap', clbase_get_script('bootstrap'));
 }
-add_action('wp_enqueue_scripts', 'hmbase_enqueue_scripts');
+add_action('wp_enqueue_scripts', 'clbase_enqueue_scripts');
 
 
 /*
@@ -82,7 +77,7 @@ add_action('wp_enqueue_scripts', 'hmbase_enqueue_scripts');
  * @param $path: file's path relative to js theme folder.
  * @return full uri of minified or not js file.
  */
-function hmbase_get_script($name, $path = ''){
+function clbase_get_script($name, $path = ''){
 	$file = '';
 	$path = trim($path, '/');
 	$path = empty($path)? '' : '/'.$path;
@@ -98,13 +93,13 @@ function hmbase_get_script($name, $path = ''){
 /*
  * @description Initialize theme
  */
-function hmbase_setup(){
-	load_theme_textdomain('hmbase', get_template_directory() . '/languages');
+function clbase_setup(){
+	load_theme_textdomain('clbase', get_template_directory() . '/languages');
 	
 	register_nav_menus( array(
-		'hmbase-top' => __('Top Menu', 'hmbase'),
-		'hmbase-footer'=>__('Footer Menu', 'hmbase'),
-		'social' => __('Social Links Menu', 'hmbase')
+		'clbase-top' => __('Top Menu', 'clbase'),
+		'clbase-footer'=>__('Footer Menu', 'clbase'),
+		'social' => __('Social Links Menu', 'clbase')
 		));
 	
 	// Adds feed links into head section
@@ -133,14 +128,14 @@ function hmbase_setup(){
 		'audio']);
 
 }
-add_action('after_setup_theme', 'hmbase_setup');
+add_action('after_setup_theme', 'clbase_setup');
 
-function hmbase_widgets_init(){
+function clbase_widgets_init(){
 	// Registrer right sidebar
 	register_sidebar([
-		'name' => __('Right Sidebar', 'hmbase'),
+		'name' => __('Right Sidebar', 'clbase'),
 		'id' => 'right-sidebar',
-		'description' => __('Add widgets here to appear to the sidebar.', 'hmbase'),
+		'description' => __('Add widgets here to appear to the sidebar.', 'clbase'),
 		'class' => 'col-md-3 hidden-xs hidden-sm',
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget' => '</section>',
@@ -148,9 +143,9 @@ function hmbase_widgets_init(){
 		'after_title' => '</h3>']);
 	
 	register_sidebar([
-		'name'=>__('Footer', 'hmbase'),
+		'name'=>__('Footer', 'clbase'),
 		'id'=>'footer',
-		'description'=>__('Add widgets here to appear to the footer.', 'hmbase'),
+		'description'=>__('Add widgets here to appear to the footer.', 'clbase'),
 		'before_widget' => '<section id="%1$s" class="footer-widget %2$s">',
 		'after_widget' => '</section>',
 		'before_title' => '<h4 class="footer-widget-title">',
@@ -162,7 +157,7 @@ function hmbase_widgets_init(){
 		show_admin_bar(false);
 	}
 }
-add_action('widgets_init', 'hmbase_widgets_init');
+add_action('widgets_init', 'clbase_widgets_init');
 
 
 
