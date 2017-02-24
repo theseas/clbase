@@ -4,19 +4,19 @@
 			<a href="<?php echo(esc_attr(get_permalink())); ?>"><?php the_title(); ?></a>
 		</h2>
 		<p>
-			<?php the_content(__('Read More ...', 'hmbase')); ?>
+			<?php the_content(__('Read More ...', 'clbase')); ?>
 		</p>
 		<div class="row info">
 			<div class="col-md-9 col-lg-9">
 				<?php
-				_e('Submitted on', 'hmbase');
+				_e('Submitted on', 'clbase');
 				echo(' ' . esc_attr(get_the_date()) . ' ');
 
-				_e('by', 'hmbase'); ?>
+				_e('by', 'clbase'); ?>
 				<a href="<?php esc_attr(the_author_link()); ?>"> <?php the_author(); ?> </a>
 
 				<?php
-				_e('to', 'hmbase');
+				_e('to', 'clbase');
 				$categories = get_the_category();
 				$format = ' <a href="%s/category/%s">%s</a>';
 
@@ -31,7 +31,7 @@
 			</div>
 			<div class="col-md-3 col-lg-3">
 				<?php 
-				printf("%s(%d)",__('Comments'), get_comments_number());
+				printf("%s(%d)",__('Comments', 'clbase'), get_comments_number());
 				?>
 			</div>
 		</div>
