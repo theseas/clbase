@@ -7,12 +7,20 @@ $args = array(
 $comments_query = new WP_Comment_Query;
 $comments = $comments_query->query($args);
 
-if($comments){
-	foreach($comments as $comment){
-		echo '<p>' . $comment->comment_content . '</p>';
-	}
-}else{
-	__('No comments found.');
-}
+if($comments): ?>
+<div id="comments">
+<?php	foreach($comments as $comment): ?>
+		<div class="comment">
+			<p><?php $comment->comment_author; ?></p>
+			<p><?php $comment->comment_author_email; ?></p>
+			<p> <?php $comment->comment_content; ?> </p>
+		</div>
+
+<?php
+	endforeach;
+else:
+	__('No comments found.', 'clbase');
+endif;
 
 ?>
+
