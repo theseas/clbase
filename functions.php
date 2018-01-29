@@ -34,8 +34,8 @@ function clbase_log($name, $obj){
  */
 function clbase_enqueue_styles(){
 	wp_enqueue_style("clbase-main-css", clbase_get_style('style'));
-	wp_enqueue_style("bootstrap", clbase_get_style('bootstrap', 'css/bootstrap'));
-	wp_enqueue_style("bootstrap-theme", clbase_get_style('bootstrap-theme', 'css/bootstrap'));
+	wp_enqueue_style("bootstrap", clbase_get_style('bootstrap', 'css'));
+	wp_enqueue_style("bootstrap-theme", clbase_get_style('bootstrap-theme', 'css'));
 }
 add_action('wp_enqueue_scripts', 'clbase_enqueue_styles');
 
