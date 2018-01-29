@@ -18,8 +18,9 @@ if($comments): ?>
 
 <?php
 	endforeach;
+	comment_form();
 else:
-	__('No comments found.', 'clbase');
+	_e('No comments found.', 'clbase');
 endif;
 
 ?>

@@ -13,6 +13,8 @@
 
 								if(comments_open() || get_comments_number()){
 									get_template_part('template_parts/comments', get_post_format());
+								}else{
+									echo '<p>' . _e('Comments are closed.', 'clbase') . '</p>';
 								}
 					?>
 					<?php
