@@ -11,9 +11,9 @@ if($comments): ?>
 <div id="comments">
 <?php	foreach($comments as $comment): ?>
 		<div class="comment">
-			<p><?php $comment->comment_author; ?></p>
-			<p><?php $comment->comment_author_email; ?></p>
-			<p> <?php $comment->comment_content; ?> </p>
+			<p><?php echo $comment->comment_author; ?></p>
+			<p><?php echo $comment->comment_author_email; ?></p>
+			<p> <?php echo $comment->comment_content; ?> </p>
 		</div>
 
 <?php
