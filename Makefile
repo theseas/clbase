@@ -1,6 +1,7 @@
 jquery_version="2.2.4"
 jquery_uri_part="https://code.jquery.com/jquery-"
 bootstrap_uri="https://github.com/twbs/bootstrap/releases/download/v3.3.7/bootstrap-3.3.7-dist.zip"
+fontawesome_uri="https://use.fontawesome.com/releases/v5.0.6/fontawesome-free-5.0.6.zip"
 proj_root=`pwd`
 
 all: jquery bootstrap font-awesome
@@ -24,6 +25,7 @@ bootstrap:
 	mv bootstrap_temp/$@.js $(proj_root)/js/
 	mv bootstrap_temp/$@.min.js $(proj_root)/js/
 	mv bootstrap_temp/glyphicons* $(proj_root)/fonts/
+	cd ..
 	rm -r bootstrap_temp
 
 clean_bootstrap:
@@ -32,6 +34,21 @@ clean_bootstrap:
 	rm -f fonts/glyphicons*
 
 font-awesome:
-	#TODO: write this rule
-
-clean: clean_bootstrap clean_jquery
+	mkdir -p fontawesome_temp
+	cd fontawesome_temp; \
+	wget $(fontawesome_uri); \
+	unzip -oj fontawesome-free-5.0.6.zip */on-server/*
+	mv fontawesome_temp/fa-regular.css $(proj_root)/css/
+	mv fontawesome_temp/fa-regular.min.css $(proj_root)/css/
+	mv fontawesome_temp/fa-solid.css $(proj_root)/css/
+	mv fontawesome_temp/fa-solid.min.css $(proj_root)/css/
+	mv fontawesome_temp/fa-regular-* $(proj_root)/webfonts/
+	mv fontawesome_temp/fa-solid-* $(proj_root)/webfonts/
+	cd ..
+	rm -r fontawesome_temp
+	
+clean_font-awesome:
+	rm -f webfonts/*
+	rm -f css/fa*.css
+	
+clean: clean_bootstrap clean_jquery clean_font-awesome
