@@ -9,7 +9,7 @@ $comments = $comments_query->query($args);
 
 if($comments){
 	foreach($comments as $comment){
-		echo '<p>' . $comment->comment_content . '</p>'
+		echo '<p>' . $comment->comment_content . '</p>';
 	}
 }else{
 	__('No comments found.');
