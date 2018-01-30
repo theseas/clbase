@@ -141,7 +141,7 @@ function clbase_setup(){
 		'link',
 		'gallery',
 		'status',
-		'audio'
+		'audio',
 		'chat']);
 
 }
