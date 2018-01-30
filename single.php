@@ -6,9 +6,6 @@
 						// The Loop Begins
 						if(have_posts()){
 								the_post();
-								if(post_password_required()){
-									return;
-								}
 								get_template_part('template_parts/content', get_post_format());
 
 								if(comments_open() || get_comments_number()){

@@ -1,5 +1,10 @@
 <?php
 
+# if post is password protected don't show comments.
+if(post_password_required()){
+	return;
+}
+
 $args = array(
 	'status' => 'approve',
 	'post_id'=> get_the_ID(),
