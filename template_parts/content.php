@@ -3,6 +3,11 @@
 		<h2 class="text-center">
 			<a href="<?php echo(esc_attr(get_permalink())); ?>"><?php the_title(); ?></a>
 		</h2>
+		<?php
+		if(has_post_thumbnail()){
+			the_post_thumbnail();
+		}
+		?>
 		<p>
 			<?php the_content(__('Read More ...', 'clbase')); ?>
 		</p>
