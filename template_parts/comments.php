@@ -2,6 +2,7 @@
 
 $args = array(
 	'status' => 'approve'
+	'post_id'=> get_the_ID();
 );
 
 $comments_query = new WP_Comment_Query;
