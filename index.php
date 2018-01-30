@@ -14,15 +14,15 @@
 							} // end while
 						} // end if
 						else{
-							_e('Sorry, no posts matched your criteria.');
+							_e('Sorry, no posts matched your criteria.', 'clbase');
 						}
 					?>
 				</main>
 				<div class="row">
 					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
 						<?php echo get_the_posts_pagination(['mid_size'=>1,
-							'prev_text'=>'< '. __('Previous') ,
-							'next_text'=>__('Next') . ' >']);
+							'prev_text'=>'< '. __('Previous', 'clbase') ,
+							'next_text'=>__('Next', 'clbase') . ' >']);
 						?>
 					</div>
 				</div>
