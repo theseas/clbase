@@ -142,7 +142,7 @@ function clbase_setup(){
 		'gallery',
 		'status',
 		'audio'
-		'chat',]);
+		'chat']);
 
 }
 add_action('after_setup_theme', 'clbase_setup');
