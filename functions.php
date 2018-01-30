@@ -105,8 +105,21 @@ function clbase_setup(){
 	// Adds feed links into head section
 	add_theme_support('automatic-feed-links');
 
-	// custom header suuport (header image etc.)
+	// custom header support (header image etc.)
 	add_theme_support('custom-header');
+
+	// custom logo support (site-title, site-description etc.)
+	//	add_theme_support('custom-logo', array(
+	//		'height' => 100,
+	//		'width' => 400,
+	//		'flex-height' => true,
+	//		'flex-width' => true,
+	//		'header-text' => array('site-title', 'site-description'),
+	//	));
+
+	// Adds post thumbnail support
+	add_theme_support('post-thumbnails');
+	set_post_thumbnail_size(1200. 9999);
 
 	// Adds title tag customization option
 	add_theme_support('title-tag');
@@ -124,8 +137,12 @@ function clbase_setup(){
 		['aside',
 		'image',
 		'video',
+		'quote',
+		'link',
 		'gallery',
-		'audio']);
+		'status',
+		'audio'
+		'chat',]);
 
 }
 add_action('after_setup_theme', 'clbase_setup');
