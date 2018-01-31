@@ -3,8 +3,24 @@ module.exports = function(grunt){
 	grunt.initConfig({
 		sass:{
 			dist:{
-				optons:{
+				options:{
 					style:'expanded',
+				},
+				files:[
+					{'style.css':'style.scss',},
+					{
+						expand:true,
+						cwd:'css',
+						src:['*.scss'],
+						dest:'css',
+						ext:'.css'
+					},
+				]
+			},
+			check:{
+				options:{
+					style:'expanded',
+					check:true,
 				},
 				files:[
 					{'style.css':'style.scss',},
