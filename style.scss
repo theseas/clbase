@@ -10,6 +10,14 @@ Tags: base-theme
 Text Domain: clbase
 */
 
+@mixin border-radius($radius){
+	-moz-border-radius: $radius;
+	-webkit-border-radius: $radius;
+	-o-border-radius: $radius;
+	-ms-border-radius: $radius;
+	border-radius: $radius;
+}
+
 /* Main BEGIN */
 
 .main{
@@ -17,10 +25,7 @@ Text Domain: clbase
 	border-left:1px solid #a0a0a0;
 	border-right:1px solid #a0a0a0;
 	border-bottom:1px solid #a0a0a0;
-	-moz-border-radius:0px 0px 0px 0px;
-	-webkit-border-radius:0px 0px 0px 0px;
-	-o-border-radius:0px 0px 0px 0px;
-	border-radius:0px 0px 0px 0px;
+	border-radius(0px 0px 0px 0px);
 }
 
 /* Main END */
@@ -33,37 +38,39 @@ Text Domain: clbase
 	margin:2% 0% 2% 0%;
 }
 
-.article img{
-	display:block;
-	clear:both;
-	max-width: 99%;
-}
+.article{ 
+	img{
+		display:block;
+		clear:both;
+		max-width: 99%;
+	}
 
-.article img.aligncenter{
-	margin:auto;
-}
+	img.aligncenter{
+		margin:auto;
+	}
 
-.article img.alignright{
-	display:inline-block;
-	margin: 5px 0px 5px 10px; 
-	float:right;
-}
+	img.alignright{
+		display:inline-block;
+		margin: 5px 0px 5px 10px; 
+		float:right;
+	}
 
-.article img.alignleft{
-	display:inline-block;
-	margin: 5px 10px 5px 0px;
-	float:left;
-}
+	img.alignleft{
+		display:inline-block;
+		margin: 5px 10px 5px 0px;
+		float:left;
+	}
 
-.article img.alignnone{
-	display:block;
-	left:0px;
-}
+	img.alignnone{
+		display:block;
+		left:0px;
+	}
 
-.article .more-link{
-	color: #1e90ff;
-	text-decoration:none;
-	border-bottom: 1px dotted #1e90ff;
+	.more-link{
+		color: #1e90ff;
+		text-decoration:none;
+		border-bottom: 1px dotted #1e90ff;
+	}
 }
 
 .article::after{
