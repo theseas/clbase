@@ -100,25 +100,29 @@ Text Domain: clbase
 /* Sidebar END */
 
 /* footer BEGIN */
+%footer-background{
+	background:#f0f0f0;
+	background:linear-gradient(#f0f0f0, #ffffff);
+}
 
 .footer{
+	@extend %footer-background;
 	border:0px solid #303030;
 	border-radius:0px 0px 10px 10px;
-	background:#e0e0e0;
-	background:linear-gradient(#e0e0e0, #f0f0f0);
 	padding-top:0%;
 	padding-bottom:0%;
 	height:200%;
 	margin-bottom:5%;
-	color:#333;
+	color:#222;
 	text-align:center;
 	height:100%;
 }
 
 .footer>div>*{
+	$border-color: #aaa;
 	padding:2% 0%;
-	border-right:1px dashed #444;
-	border-left:1px dashed #444;
+	border-right:1px dashed $border-color;
+	border-left:1px dashed $border-color;
 	min-height:100%;
 }
 
@@ -137,30 +141,33 @@ Text Domain: clbase
 
 
 .footer a, .footer a:visited{
-	color:#aaa;
+	$link: #333;
+	color:$link;
 	text-decoration:none;
-	border-bottom:1px dotted #aaa;
+	border-bottom:1px dotted $link;
 }
 
 .footer a:active, .footer a:hover{
-	color:#fff;
+	$active-link: #111;
+	color:$active-link;
 	text-decoration:none;
-	border-bottom:1px solid #fff;
+	border-bottom:1px solid $active-link;
 }
 
 @media (max-width:768px){
-	.footer>div>*{
+.footer{
+	div>*{
 		border:0px;
 		padding:5% 0% 5% 0%;
 		border-top:1px dashed #444;
 		border-bottom:1px dashed #444;
 	}
 
-	.footer>div>*:first-child{
+	div>*:first-child{
 		border-top:0px;
 	}
 
-	.footer>div>*:last-child{
+	div>*:last-child{
 		border-bottom:0px;
 	}
 
