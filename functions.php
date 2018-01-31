@@ -119,7 +119,7 @@ function clbase_setup(){
 
 	// Adds post thumbnail support
 	add_theme_support('post-thumbnails');
-	set_post_thumbnail_size(1200, 9999);
+	set_post_thumbnail_size();
 
 	// Adds title tag customization option
 	add_theme_support('title-tag');
