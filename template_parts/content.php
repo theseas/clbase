@@ -5,7 +5,7 @@
 		</h2>
 		<?php
 		if(has_post_thumbnail()){
-			the_post_thumbnail();
+			the_post_thumbnail('post-thumbnail', array('title' => get_the_title()));
 		}
 		?>
 		<p>
