@@ -1,2 +1,6 @@
 *.min.*
 *.mo
+node_modules/*
+.sass-cache/*
+*.map
+*.css
