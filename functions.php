@@ -12,7 +12,7 @@
 /*
  * @description Formats and logs an object
  * @param string	$name	Name of the object	 
- * @param mixed		$obj 	Object to be loged
+ * @param mixed		$obj 	Object to be logged
  */
 function clbase_log($name, $obj){
 	if(WP_DEBUG===true){
@@ -20,7 +20,7 @@ function clbase_log($name, $obj){
 			$obj_str = print_r($obj, true);
 			$obj_str = $name . ': ' .str_replace("\n", '', $obj_str);
 		}else{
-			$obj_str = $obj;
+			$obj_str = $name . ': ' .$obj;
 		}
 		error_log($obj_str);
 	}
@@ -201,8 +201,8 @@ add_action('admin_bar_menu', 'clbase_remove_toolbar_nodes', 999);
  * @return $html (string) filtered html string
  */
 function clbase_remove_thumbnail_size($html, $post_id, $post_thumbnail_id, $size, $attr){
-	clbase_log("thumbnail attributes: " . $attr);
-	$html = preg_replace('(width|height)=\"\d*\"\s', '', $html);
+	clbase_log("thumbnail attributes", $attr);
+	$html = preg_replace('/(width|height)=\"\d*\"\s/', '', $html);
 	return $html;
 }
 add_filter('post_thumbnail_html', 'clbase_remove_thumbnail_size', 10, 5);
