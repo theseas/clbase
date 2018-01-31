@@ -6,13 +6,13 @@ proj_root=`pwd`
 
 all: jquery bootstrap font-awesome grunt
 
-jquery: js/jquery.js
+jquery: 
 	wget -O js/$@.js $(jquery_uri_part)$(jquery_version).js
 
 clean_jquery:
 	rm -f js/jquery*.js
 
-bootstrap: css/bootstrap.css css/bootstrap-theme.css js/bootstrap.js fonts/glyphicons*
+bootstrap: 
 	mkdir -p bootstrap_temp
 	cd bootstrap_temp; \
 	wget $(bootstrap_uri); \
@@ -29,7 +29,7 @@ clean_bootstrap:
 	rm -f css/bootstrap*.css
 	rm -f fonts/glyphicons*
 
-font-awesome: css/fa-regular.css css/fa-solid.css webfonts/*
+font-awesome: 
 	mkdir -p fontawesome_temp
 	cd fontawesome_temp; \
 	wget $(fontawesome_uri); \
@@ -53,7 +53,9 @@ clean_grunt:
 	rm -rf node_modules
 	rm -f style.min.css
 	rm -f style.css
+	rm -f style.css.map
 	rm -f css/*.css
+	rm -f css/*.map
 	rm -f js/*.min.js
 	
 clean: clean_bootstrap clean_jquery clean_font-awesome clean_grunt
