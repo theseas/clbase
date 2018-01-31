@@ -6,11 +6,6 @@ require_once('clbase_menu_walker.php');
 <head>
 	<meta value="Content-Type" content="<?php bloginfo('html_type');?> charset=<?php bloginfo('charset');?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<?php
-		if(!current_user_can('manage_options')){
-			show_admin_bar(true); 
-		}
-	?>
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>

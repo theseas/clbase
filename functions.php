@@ -144,6 +144,9 @@ function clbase_setup(){
 		'audio',
 		'chat']);
 
+		if(!current_user_can('administrator') && !is_admin()){
+			show_admin_bar(false); 
+		}
 }
 add_action('after_setup_theme', 'clbase_setup');
 
@@ -176,6 +179,9 @@ function clbase_widgets_init(){
 }
 add_action('widgets_init', 'clbase_widgets_init');
 
-
+function clbase_remove_toolbar_nodes(){
+	$wp_admin_bar->remove_node('wp-logo');
+}
+add-action('admin_bar_menu', 'clbase_remove_toolbar_nodes', 999);
 
 ?>
