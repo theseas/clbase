@@ -201,7 +201,6 @@ add_action('admin_bar_menu', 'clbase_remove_toolbar_nodes', 999);
  * @return $html (string) filtered html string
  */
 function clbase_remove_thumbnail_size($html, $post_id, $post_thumbnail_id, $size, $attr){
-	clbase_log("thumbnail attributes", $attr);
 	$html = preg_replace('/(width|height)=\"\d*\"\s/', '', $html);
 	return $html;
 }
