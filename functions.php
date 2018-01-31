@@ -179,7 +179,7 @@ function clbase_widgets_init(){
 }
 add_action('widgets_init', 'clbase_widgets_init');
 
-function clbase_remove_toolbar_nodes(){
+function clbase_remove_toolbar_nodes($wp_admin_bar){
 	$wp_admin_bar->remove_node('wp-logo');
 }
 add_action('admin_bar_menu', 'clbase_remove_toolbar_nodes', 999);
