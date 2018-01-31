@@ -97,13 +97,13 @@ Text Domain: clbase
 .footer{
 	border:0px solid #303030;
 	border-radius:0px 0px 10px 10px;
-	background:#303030;
-	background:linear-gradient(#303030, #202020);
+	background:#e0e0e0;
+	background:linear-gradient(#e0e0e0, #f0f0f0);
 	padding-top:0%;
 	padding-bottom:0%;
 	height:200%;
 	margin-bottom:5%;
-	color:#aaa;
+	color:#333;
 	text-align:center;
 	height:100%;
 }
