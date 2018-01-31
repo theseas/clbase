@@ -16,8 +16,12 @@
  */
 function clbase_log($name, $obj){
 	if(WP_DEBUG===true){
-		$obj_str = print_r($obj, true);
-		$obj_str = $name . ': ' .str_replace("\n", '', $obj_str);
+		if(is_object($obj) || is_array($obj)){
+			$obj_str = print_r($obj, true);
+			$obj_str = $name . ': ' .str_replace("\n", '', $obj_str);
+		}else{
+			$obj_str = $obj;
+		}
 		error_log($obj_str);
 	}
 }
@@ -144,12 +148,16 @@ function clbase_setup(){
 		'audio',
 		'chat']);
 
+		// removes the admin bar for not admin users
 		if(!current_user_can('administrator') && !is_admin()){
 			show_admin_bar(false); 
 		}
 }
 add_action('after_setup_theme', 'clbase_setup');
 
+/*
+ * @description Initialize right sidebar and footer widget placeholders
+ */
 function clbase_widgets_init(){
 	// Registrer right sidebar
 	register_sidebar([
@@ -162,6 +170,7 @@ function clbase_widgets_init(){
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>']);
 	
+	// Register footer
 	register_sidebar([
 		'name'=>__('Footer', 'clbase'),
 		'id'=>'footer',
@@ -170,18 +179,32 @@ function clbase_widgets_init(){
 		'after_widget' => '</section>',
 		'before_title' => '<h4 class="footer-widget-title">',
 		'after_title' => '</h4>']);
-	
-	if(true){
-		show_admin_bar(true);
-	}else{
-		show_admin_bar(false);
-	}
 }
 add_action('widgets_init', 'clbase_widgets_init');
 
+/*
+ * @description  Removes wordpress logo from admin toolbar
+ * @param $wp_admin_bar the admin bar object
+ */
 function clbase_remove_toolbar_nodes($wp_admin_bar){
 	$wp_admin_bar->remove_node('wp-logo');
 }
 add_action('admin_bar_menu', 'clbase_remove_toolbar_nodes', 999);
+
+/*
+ * @description remove the width and the height values from the thumbnails html
+ * @param $html (string) the_post_thumbnail returned html before filter.
+ * @param $post_id (int) The id of the post this thumbnail belongs to.
+ * @param $post_thumbnail_id (string) The id of the thumbnail
+ * @param $size (string|array) The post thumbnails size
+ * @param $attr (string) Query string of attributes
+ * @return $html (string) filtered html string
+ */
+function clbase_remove_thumbnail_size($html, $post_id, $post_thumbnail_id, $size, $attr){
+	clbase_log("thumbnail attributes: " . $attr);
+	$html = preg_replace('(width|height)=\"\d*\"\s', '', $html);
+	return $html;
+}
+add_filter('post_thumbnail_html', 'clbase_remove_thumbnail_size', 10, 5);
 
 ?>
