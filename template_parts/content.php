@@ -23,7 +23,7 @@
 				<?php
 				_e('to', 'clbase');
 				$categories = get_the_category();
-				$format = ' <a href="%s/category/%s">%s</a>';
+				$format = ' <a href="%s?/category/%s">%s</a>';
 
 				for($i=0; $i<sizeof($categories); $i++){
 					printf($format, esc_attr(get_bloginfo('url')), esc_attr($categories[$i]->slug), esc_attr($categories[$i]->name));
