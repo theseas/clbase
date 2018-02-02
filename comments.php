@@ -37,6 +37,6 @@ else:
 endif;
 
 comment_form();
-</div>
 ?>
 
+</div>
