@@ -14,8 +14,8 @@ $comments_query = new WP_Comment_Query;
 $comments = $comments_query->query($args);
 
 
-if($comments): ?>
 <div id="comments">
+if($comments): ?>
 <h3><?php _e('Thoughts on ', 'clbase'); the_title(); ?></h3>
 <?php	foreach($comments as $comment): ?>
 		<div class="comment">
@@ -35,8 +35,8 @@ if($comments): ?>
 			<p> <?php echo $comment->comment_content; ?> </p>
 			<div class="comment-controls">
 				<span><?php edit_comment_link(__('Edit Comment', 'clbase')); ?></span>
-			</div>
-		</div>
+			</div> <!-- END .comment-controls -->
+		</div> <!-- END .comment -->
 
 <?php
 	endforeach;
@@ -47,5 +47,5 @@ endif;
 comment_form();
 ?>
 
-</div>
+</div> <!-- END #comments -->
 
