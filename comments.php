@@ -13,12 +13,14 @@ $args = array(
 $comments_query = new WP_Comment_Query;
 $comments = $comments_query->query($args);
 
+
 if($comments): ?>
 <div id="comments">
+<h3><?php _e('Thoughts on ', 'clbase'); the_title(); ?></h3>
 <?php	foreach($comments as $comment): ?>
 		<div class="comment">
-			<p><?php echo $comment->comment_author; ?></p>
-			<p><?php echo $comment->comment_author_email; ?></p>
+			<p><a href="<?php echo esc_url(get_comment_autor_link($comment_ID)); ?>"><?php echo $comment->comment_author; ?></a></p>
+			<p><a rel="nofollow" href="<?php echo esc_url($comment->comment_author_url);?>"><?php echo $comment->comment_author_url; ?></a></p>
 			<p> <?php echo $comment->comment_content; ?> </p>
 		</div>
 
@@ -29,6 +31,6 @@ else:
 endif;
 
 comment_form();
-
+</div>
 ?>
 
