@@ -26,7 +26,7 @@ if($comments): ?>
 	endforeach;
 	comment_form();
 else:
-	_e('No comments found.', 'clbase');
+	_e('This post has no comments.', 'clbase');
 endif;
 
 ?>
