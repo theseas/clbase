@@ -20,7 +20,15 @@ if($comments): ?>
 <?php	foreach($comments as $comment): ?>
 		<div class="comment">
 			<p>
-				<span><?php _e('Comment by ', 'clbase'); comment_author_link();  ?></span>
+				<span><?php _e('Comment by: ', 'clbase');  ?>
+				<?php if(get_user_by('login', $comment->comment_author)): ?>
+					<a href="<?php echo esc_url(bloginfo('url') . '/' . $comment->comment_author); ?>"><?php $comment->comment_author; ?></a>
+				<?php 
+					else: 
+						echo $comment->comment_author;
+					endif;
+				?>
+				</span>
 				<span><?php echo __("Posted on ", 'clbase') . $comment->comment_date; ?> </span>
 			</p>
 			<p><a rel="nofollow" href="<?php echo esc_url($comment->comment_author_url);?>"><?php echo $comment->comment_author_url; ?></a></p>
@@ -37,6 +45,7 @@ else:
 endif;
 
 comment_form();
-</div>
 ?>
+
+</div>
 
