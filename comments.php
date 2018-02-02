@@ -26,7 +26,7 @@ if($comments): ?>
 			<p><a rel="nofollow" href="<?php echo esc_url($comment->comment_author_url);?>"><?php echo $comment->comment_author_url; ?></a></p>
 			<p> <?php echo $comment->comment_content; ?> </p>
 			<div class="comment-controls">
-				<span>$edit_comment_link(__('Edit Comment', 'clbase'))</span>
+				<span><?php $edit_comment_link(__('Edit Comment', 'clbase')); ?></span>
 			</div>
 		</div>
 
