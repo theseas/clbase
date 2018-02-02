@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 	<div class="row main round-border">
-			<div class="<?php echo(is_active_sidebar('right-sidebar')?'col-lg-9 col-md-9':'');?> col-sm-12 col-xs-12">
+			<div class="<?php echo(is_active_sidebar('right-sidebar')?'col-lg-8 col-md-8':'');?> col-sm-12 col-xs-12">
 				<main>
 					<?php
 						// The Loop Begins
