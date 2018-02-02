@@ -22,7 +22,7 @@ if($comments): ?>
 			<p>
 				<span><?php _e('Comment by: ', 'clbase');  ?>
 				<?php if(get_user_by('login', $comment->comment_author)): ?>
-					<a href="<?php echo esc_url(bloginfo('url') . '/' . $comment->comment_author); ?>"><?php echo $comment->comment_author; ?></a>
+					<a href="<?php echo esc_url(bloginfo('url') . '/author/' . $comment->comment_author); ?>"><?php echo $comment->comment_author; ?></a>
 				<?php 
 					else: 
 						echo $comment->comment_author;
