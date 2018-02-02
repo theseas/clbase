@@ -24,10 +24,11 @@ if($comments): ?>
 
 <?php
 	endforeach;
-	comment_form();
 else:
 	_e('This post has no comments.', 'clbase');
 endif;
+
+comment_form();
 
 ?>
 
